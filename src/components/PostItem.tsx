@@ -38,9 +38,9 @@ const PostItem = ({data, onExpandOrCollapse, open}: PostItemProps) => {
 
   const heavyComputation = useMemo(() => {
     const start = performance.now()
-    const result = fibonacci(data.id%20);
+    const result = fibonacci(data.id%30);
     const end = performance.now()
-    console.log('heavyComputation',end-start);
+    console.log('heavyComputation',((end-start)).toFixed(2));
     return `${data.id}. ${data.title}`;
   }, [data]);
 
